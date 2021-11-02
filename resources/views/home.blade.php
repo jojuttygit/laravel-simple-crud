@@ -8,16 +8,7 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
-                    @if(session()->has('success'))
-                        <div class="alert alert-success">
-                            {{ session()->get('message') }}
-                        </div>
-                    @endif
-                    @if(session()->has('error'))
-                        <div class="alert alert-danger">
-                            {{ session()->get('message') }}
-                        </div>
-                    @endif
+                    <h2>Welcome..</h2>
                 </div>
             </div>
         </div>

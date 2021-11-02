@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
 class CompanyFormRequest extends FormRequest
 {
     /**
@@ -23,11 +22,20 @@ class CompanyFormRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        //for create
+        $rules = [
             'company' => 'required|string',
             'email' => 'required|email',
             'logo' => 'required|image|dimensions:min_width=100,min_height=100',
-            'website' => 'string',
+            'website' => 'url|nullable',
         ];
+
+        //for update
+        if ($this->has('company_id')) {
+            $rules['company_id'] = 'required|exists:companies,company_id';
+            $rules['logo'] = 'image|dimensions:min_width=100,min_height=100|nullable';
+        }
+
+        return $rules;
     }
 }
