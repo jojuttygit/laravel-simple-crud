@@ -1,5 +1,5 @@
 
-## Company and employee CRUD operations
+## Company and employee CRUD operations Laravel 8 and Bootstrap 4
 
 ## Requirements
 
